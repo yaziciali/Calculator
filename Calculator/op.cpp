@@ -19,7 +19,7 @@
 using namespace std;
 
 
-double operation (char op, double a, double b) 						//Check which operation and return its result.
+double Op::operation (char op, double a, double b) 						//Check which operation and return its result.
 {
 	if (op == '*')
 		return a*b;
@@ -38,7 +38,7 @@ double operation (char op, double a, double b) 						//Check which operation and
 		return a-b;
 }
 
-string operate(string input)
+string Op::operate(string input)
 {
 	double a, b,c;
 	stringstream output;
@@ -101,7 +101,7 @@ string operate(string input)
 	return input;
 }
 
-string recursiveHell(string input)
+string Op::recursiveHell(string input)
 {
 	string aux;
 
