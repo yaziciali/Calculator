@@ -6,6 +6,7 @@
 using namespace std;
 
 struct my_var{
+	my_var();
 	string nm;				//name of the variable.
 	string val;				//value of the cariable.
 	struct my_var *prev;			//reference to the previous variable in the variable list.

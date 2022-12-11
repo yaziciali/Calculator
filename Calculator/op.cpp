@@ -36,6 +36,8 @@ double Op::operation (char op, double a, double b) 						//Check which operation
 		return a+b;
 	if (op == '-')
 		return a-b;
+
+	return 0;
 }
 
 string Op::operate(string input)
@@ -43,18 +45,19 @@ string Op::operate(string input)
 	double a, b,c;
 	stringstream output;
 	char op;
-	int opPos;
+	size_t opPos;
 	string var;
+	size_t z0 = 0;
 	//change back the "#" to the minus sign "-"
 
-	if (input.find('*',0) != string::npos)
-		opPos = input.find('*',0);
-	if (input.find('/',0) != string::npos)
-		opPos = input.find('/',0);
-	if (input.find('+',0) != string::npos)
-		opPos = input.find('+',0);
-	if (input.find('-',0) != string::npos)
-		opPos = input.find('-',0);
+	if (input.find('*', z0) != string::npos)
+		opPos = input.find('*', z0);
+	if (input.find('/', z0) != string::npos)
+		opPos = input.find('/', z0);
+	if (input.find('+', z0) != string::npos)
+		opPos = input.find('+', z0);
+	if (input.find('-', z0) != string::npos)
+		opPos = input.find('-', z0);
         if (input[opPos+1] != '#'&&(input[opPos+1] < '0'|| input[opPos+1] > '9'))
          {       
                  var = input;
@@ -85,13 +88,13 @@ string Op::operate(string input)
                  opPos = input.find('-',0);
 	while (input.find('#',0) != string::npos)
 	{
-		int hashPos = input.find('#',0);
+		size_t hashPos = input.find('#',0);
 		input[hashPos] = '-';
 	}
 
 	op = input[opPos];
-	a = DataM::stringToDouble(input,0,opPos-1);
-	b = DataM::stringToDouble(input,opPos+1,input.size()-1);
+	a = DataM::stringToDouble(input,0,(int)opPos-1);
+	b = DataM::stringToDouble(input, (int)opPos+1, (int)input.size()-1);
 	c = operation(op, a, b);
 	input.clear();
 	output << c;
@@ -115,15 +118,15 @@ string Op::recursiveHell(string input)
 	//Getting rid of the parentheses, running the function recursevely to operate around them:
 	while (input.find('(',0) != string::npos)
 	{
-		int parpos, otherpar, openpar;
+		size_t parpos, otherpar, openpar;
 		aux = input;
-		parpos = input.rfind(')',input.size());
+		parpos = input.rfind(')', input.size());
 		otherpar = parpos;
-		openpar = input.rfind('(',parpos);
+		openpar = input.rfind('(', parpos);
 		while ((input.rfind(')',otherpar-1) != string::npos) && (input.rfind(')',otherpar-1) >= (input.rfind('(',openpar))))
 		{
-			otherpar = input.rfind(')',otherpar-1);
-			openpar = input.rfind('(',openpar-1);
+			otherpar = input.rfind(')', otherpar-1);
+			openpar = input.rfind('(', openpar-1);
 		}
 		aux = aux.erase(parpos,aux.size());
 		aux = aux.erase(0,openpar+1);
@@ -134,7 +137,7 @@ string Op::recursiveHell(string input)
 	}
 
 	//Operations part:
-	int op, opprev, oppos;
+	size_t op, opprev, oppos;
 	opprev = -1;
 	oppos = input.size();
 

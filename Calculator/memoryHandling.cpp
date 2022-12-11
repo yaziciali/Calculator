@@ -70,7 +70,12 @@ int Mem::close()
 	int err = 0;
 	if (last->nm != "head")	
 		err = Mem::clear();
-	if (err = 0)
+	if (err == 0)
 		delete head;
 	return 0;
+}
+
+my_var::my_var()
+{
+	prev = NULL;
 }

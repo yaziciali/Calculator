@@ -20,7 +20,7 @@ int Val::inputVal (string input)
 	return 0;						//return 0 means overall input is OK.
 }
 
-int sentenceVal (string input)
+int Val::sentenceVal (string input)
 {
 	if (input.find('=',0) != string::npos)
 	{
