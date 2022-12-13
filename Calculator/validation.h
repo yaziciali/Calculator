@@ -6,10 +6,10 @@
 using namespace std;
 
 namespace Val{
-	int inputVal (string);			//Validates the string the user inputs.
-	int subInputVal (string);		//Validate each substring the user inputs.
+	int inputVal (std::string);			//Validates the string the user inputs.
+	int subInputVal (std::string);		//Validate each substring the user inputs.
 
-	int sentenceVal(string input);
+	int sentenceVal(std::string input);
 }
 
 #endif

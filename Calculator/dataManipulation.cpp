@@ -8,7 +8,7 @@
 
 using namespace std;
 
-string DataM::getUserInput()
+ string DataM::getUserInput()
 {
 	string input;
 	cout << ">>";
@@ -16,31 +16,31 @@ string DataM::getUserInput()
 	return input;
 }
 
-string DataM::subInput(string input)
+ string DataM::subInput(string input)
 {
 	input = input.substr (0, input.find(';',0));
 	return input;
 }
 
-string DataM::rmSubInput(string input)
+ string DataM::rmSubInput(string input)
 {
-	int i = input.find(';',0) + 1;
+	size_t i = input.find(';',0) + 1;
 	input = input.erase (0,i);
 	return input;
 }
 
-string DataM::delSpaces (string input)
+ string DataM::delSpaces (string input)
 {
 	while (input.find(' ',0) != string::npos)
 		input.erase( input.find(' ',0), 1);
 	return input;
 }
 
-string DataM::insMult (string input)
+ string DataM::insMult (string input)
 {
 	if (input.find('(',1) != string::npos)
 	{
-		int noMultPos = input.find('(',1);
+		size_t noMultPos = input.find('(',1);
 		do{
 			if (input.find_last_of("/*+-;(",noMultPos-1) != noMultPos-1)
 				{
@@ -54,7 +54,7 @@ string DataM::insMult (string input)
 
 	if (input.find(')',1) != string::npos)
 	{
-		int noMultPos = input.find(')',1);
+		size_t noMultPos = input.find(')',1);
 			do{
 				if (input.find_first_of("/*+-;)",noMultPos+1) != noMultPos+1)
 				{

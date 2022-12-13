@@ -5,14 +5,17 @@
 
 using namespace std;
 
-struct my_var{
+namespace Mem {
+
+class my_var{
+public:
 	my_var();
 	string nm;				//name of the variable.
 	string val;				//value of the cariable.
-	struct my_var *prev;			//reference to the previous variable in the variable list.
+	 my_var *prev;			//reference to the previous variable in the variable list.
 };
 
-namespace Mem{
+
 	int open();				//Function to open the Calculator, creating the head. Returns a success code.
 	int clear();				//Function to clear all the variables in the memory, except the head. Returns a success code.
 	int add(string, string);		//Function to add a new variable to the memory. Returns a success code.
