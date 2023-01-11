@@ -1,6 +1,10 @@
-UFRJ
-Electronics and Computational Engeneering
-Programming Languages Course
+It is a fork repository, I changed some codes and prepared for Visual studio 2022 
+Then I write unit tests 
+
+
+
+1)Install:
+You can use visual studio 2022 with c++ components to compile and run this application.
 
 Group:
 Gabriel Bastos
@@ -9,10 +13,6 @@ Luiz Henrique Vasconcelos
 Natália França
 Pedro Goñi Coelho
 Phellipe Moura
-
-1)Install:
-In a Unix machine, simple run the line "make" in the terminal, making sure all the files are in the current folder. You can use other C++ compilers. The "makefile" is editable to that end.
-
 
 2)Program:
 A command line calculator, written in C++.
