@@ -7,7 +7,7 @@ Test Results: https://github.com/yaziciali/Calculator/blob/master/Test_results.p
 1)Install:
 You can use visual studio 2022 with c++ components to compile and run this application.
 
-Group:
+Group of original code:
 Gabriel Bastos
 Luiz Felipe Santos Vecchietti
 Luiz Henrique Vasconcelos
