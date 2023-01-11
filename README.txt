@@ -1,6 +1,7 @@
 It is a fork repository, I changed some codes and prepared for Visual studio 2022 
 Then I write unit tests 
 
+Test Results: https://github.com/yaziciali/Calculator/blob/master/Test_results.png
 
 
 1)Install:
